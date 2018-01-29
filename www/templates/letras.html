@@ -1,0 +1,25 @@
+<ion-view view-title="Letras" class="bar-assertive">
+  <ion-content>
+      <div class="row" ng-repeat="letter in letters" ng-if="$index % 2 == 0">
+            <div class="col col-50" ng-if="$index < letters.length">
+                <div class="card">
+                    <div  ng-controller="mediaCtrl" class="item text-center">
+                        <!-- PARA IOS LOS COMENTADOS<a ng-click="play('raw/'+letters[$index].title+'.mp3')"><h1>{{letters[$index].content}}</h1></a>-->
+                        <a ng-click="play('/android_asset/www/raw/'+items[$index].mintitle+'.mp3')"><h1 style="color: {{items[$index].color}} !important; font-size: 48px !important; font-weight: bold !important;" >{{letters[$index].content}}</h1></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col col-50" ng-if="$index +1 < letters.length">
+                <div class="card">
+                    <div  ng-controller="mediaCtrl" class="item text-center">
+                        <!--<a ng-click="play('raw/'+letters[$index + 1].title+'.mp3')"><h1>{{letters[$index + 1].content}}</h1></a>-->
+                        <a ng-click="play('/android_asset/www/raw/'+items[$index + 1].mintitle+'.mp3')"><h1 style="color: {{items[$index + 1].color}} !important; font-size: 48px !important; font-weight: bold !important;" >{{letters[$index + 1].content}}</h1></a>
+                        
+                    </div>
+                </div>
+            </div>
+      </div>
+    
+  </ion-content>
+</ion-view>

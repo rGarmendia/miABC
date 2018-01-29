@@ -1,0 +1,66 @@
+<ion-view>
+    <ion-nav-title>{{simple.title}}</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-share-alt"></button>&nbsp;&nbsp;
+        <button class="button button-icon button-clear ion-ios-settings-strong" ng-click="showE($event)">
+        </button>
+      </ion-nav-buttons>
+  <ion-content>
+      
+      <div class="row">
+        <div class="col">
+            <br><br>
+            <h1 style="text-align: center !important; font-weight: bold !important; font-size: 90px !important; color: #ef473a !important;">{{simple.content}}</h1>
+            <br><br>
+          
+            <!--<div ng-repeat="otro in sencillo" repeat-done="repeatDone()">
+                
+                <h1>{{otro.sound_title}}</h1>
+                
+            </div>-->
+        </div>
+      </div>
+      <div class="row fondo-rojo" ng-controller="mediaCtrl">
+          <div  class="col">
+            
+            <!--<ion-slide-box ng-if="sencillo.length && sencillo[$index].custom_sound_path" on-slide-changed="slideHasChanged(sencillo[$index].custom_sound_path)" class="fondo-rojo" show-pager="false" does-continue="true">
+             
+                <ion-slide on-swipe-right="setR({{sencillo}},$index)" on-swipe-left="setL({{sencillo}},$index)" ng-repeat="senci in sencillo"  repeat-done="repeatDone()">
+                      
+                           <h1 class="margen-slide slide-estilo">{{senci.title}}</h1>
+                           <div style="margin: 0 auto; width:70px" >
+                           <a ng-click="play(senci.custom_sound_path)"><img ng-src="img/sonidos/play.png" width="70px" height="70px"></a>
+                           <!--<button ng-click="nextSlide()"> >> </button>
+                           </div>
+                </ion-slide>
+              
+            </ion-slide-box>-->
+          
+           
+            <ion-slide-box ng-if="sencillo.length" on-slide-changed="slideHasChanged('/android_asset/www/raw/'+mintitle[$index]+'.mp3',sencillo[$index].custom_sound_path)" class="fondo-rojo" show-pager="false" does-continue="true">
+                <ion-slide on-swipe-right="setR({{sencillo}},$index)" on-swipe-left="setL({{sencillo}},$index)" ng-repeat="senci in sencillo"  repeat-done="repeatDone()">
+                      
+                           <h1 class="margen-slide slide-estilo">{{senci.title}}</h1>
+                           <div style="margin: 0 auto; width:70px" >
+                           <a ng-click="slideHasChanged('/android_asset/www/raw/'+mintitle[$index]+'.mp3',sencillo[$index].custom_sound_path)"><img ng-src="img/sonidos/play.png" width="70px" height="70px"></a>
+                           <!--<button ng-click="nextSlide()"> >> </button>-->
+                           </div>
+                </ion-slide>
+            </ion-slide-box>
+            
+            
+            
+        </div>
+      </div>
+     
+          
+              
+        
+        
+  
+      
+        
+      
+    
+  </ion-content>
+</ion-view>

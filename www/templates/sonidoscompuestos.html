@@ -1,0 +1,35 @@
+<ion-view view-title="Compuestos" class="bar-assertive">
+  <ion-content>
+      <div class="row" ng-repeat="compuesto in compuestos" ng-if="$index % 3 == 0">
+            <div class="col col-33" ng-if="$index < compuestos.length">
+                <div class="card no-margin">
+                    <div class="item text-center no-padding">
+                        <!-- PARA IOS LOS COMENTADOS<a ng-click="play('raw/'+letters[$index].title+'.mp3')"><h1>{{letters[$index].content}}</h1></a>-->
+                                               
+                        <a style="text-decoration:none !important;" ng-href="#/app/compuestos/{{compuestos[$index].Id}}"><h1 style="color: {{items[$index].color}} !important; font-size: 48px !important;font-weight: bold !important;">{{compuestos[$index].title}}</h1></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col col-33" ng-if="$index +1 < compuestos.length">
+                <div class="card no-margin">
+                    <div class="item text-center no-padding">
+                        <!--<a ng-click="play('raw/'+letters[$index + 1].title+'.mp3')"><h1>{{letters[$index + 1].content}}</h1></a>-->
+                        <a style="text-decoration:none !important;" ng-href="#/app/compuestos/{{compuestos[$index + 1].Id}}"><h1 style="color: {{items[$index + 1].color}} !important; font-size: 48px !important;font-weight: bold !important;">{{compuestos[$index + 1].title}}</h1></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col col-33" ng-if="$index +2 < compuestos.length">
+                <div class="card no-margin">
+                    <div class="item text-center no-padding">
+                        <!--<a ng-click="play('raw/'+letters[$index + 1].title+'.mp3')"><h1>{{letters[$index + 1].content}}</h1></a>-->
+                        <a style="text-decoration:none !important;" ng-href="#/app/compuestos/{{compuestos[$index + 2].Id}}"><h1 style="color: {{items[$index + 2].color}} !important; font-size: 48px !important;font-weight: bold !important;">{{compuestos[$index + 2].title}}</h1></a>
+                        
+                    </div>
+                </div>
+            </div>
+      </div>
+    
+  </ion-content>
+</ion-view>

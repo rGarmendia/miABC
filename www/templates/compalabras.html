@@ -1,0 +1,36 @@
+<ion-view view-title="Palabras" class="bar-assertive">
+  <ion-content>
+      <div class="row" ng-repeat="palabra in palabras" ng-if="$index % 3 == 0">
+            <div class="col col-33" ng-if="$index < palabras.length">
+                <div class="card no-margin">
+                    <div class="item text-center no-padding">
+                        <!-- PARA IOS LOS COMENTADOS<a ng-click="play('raw/'+letters[$index].title+'.mp3')"><h1>{{letters[$index].content}}</h1></a>-->
+                                               
+                        <a style="text-decoration:none !important;" ng-href="#/app/palabras/{{palabras[$index].Id}}"><h1 style="color: {{items[$index].color}} !important; font-size: 48px !important;font-weight: bold !important;">{{palabras[$index].title}}</h1></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col col-33" ng-if="$index +1 < palabras.length">
+                <div class="card no-margin">
+                    <div class="item text-center no-padding">
+                        <!--<a ng-click="play('raw/'+letters[$index + 1].title+'.mp3')"><h1>{{letters[$index + 1].content}}</h1></a>-->
+                        <a style="text-decoration:none !important;" ng-href="#/app/palabras/{{palabras[$index + 1].Id}}"><h1 style="color: {{items[$index + 1].color}} !important; font-size: 48px !important;font-weight: bold !important;">{{palabras[$index + 1].title}}</h1></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col col-33" ng-if="$index +2 < palabras.length">
+                <div class="card no-margin">
+                    <div class="item text-center no-padding">
+                        <!--<a ng-click="play('raw/'+letters[$index + 1].title+'.mp3')"><h1>{{letters[$index + 1].content}}</h1></a>-->
+                        <a style="text-decoration:none !important;" ng-href="#/app/palabras/{{palabras[$index + 2].Id}}"><h1 style="color: {{items[$index + 2].color}} !important; font-size: 48px !important;font-weight: bold !important;">{{palabras[$index + 2].title}}</h1></a>
+                        
+                    </div>
+                </div>
+            </div>
+      </div>
+    
+  </ion-content>
+</ion-view>
+

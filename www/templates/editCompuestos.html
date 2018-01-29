@@ -1,0 +1,41 @@
+<ion-view>  
+    <ion-nav-title>ABC</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-help-outline" ng-click="helpPopup()"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="button button-icon button-clear ion-ios-checkmark-outline" ng-click="save(editcompRow.Id_words)">&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="button button-icon button-clear ion-ios-settings-strong" ng-click="showE($event)">
+        </button>
+      </ion-nav-buttons>
+  <ion-content>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Letra</span>
+          <input style="font-size: 18px !important; text-align: right !important; font-weight: bold !important; color: #ef473a !important; " type="text" name="letter" value="{{letter.title}}" readonly="readonly">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Palabra</span>
+          <input style="font-size: 18px !important; text-align: right !important; font-weight: bold !important;" type="text" name="word" value="{{editcompRow.title}}" readonly="readonly">
+        </label>
+        <div class="row">
+            
+            <div class="col col-40">
+                <label>
+                    <span class="input-label">&nbsp;Audio</span>
+                </label>
+            </div>
+            <div class="col col-offset-20">
+                
+                <a ng-click="playing(editcompRow.custom_sound_path,'/android_asset/www/raw/'+mintitle+'.mp3')"><img ng-src="img/sonidos/play.png" width="40px" height="40px"></a>
+                    <!--<a ng-click="play(editsimple.custom_sound_path)"><img ng-src="img/sonidos/play.png" width="40px" height="40px"></a>-->
+            
+            </div>
+            <div class="col">
+                <a on-hold="recordStart(editcompRow.sound_title)" on-release="recordEnd()"><img ng-src="img/sonidos/mic.png" width="40px" height="40px"></a>   
+            </div>
+            <div class="col">
+                <a ng-click="play('/android_asset/www/raw/'+mintitle+'.mp3')"><img ng-src="img/sonidos/gallery.png" width="40px" height="40px"></a>
+            </div>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

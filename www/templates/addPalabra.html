@@ -1,0 +1,70 @@
+<ion-view>  
+    <ion-nav-title>MIABC</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-help-outline" ng-click="helpPopup()"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="button button-icon button-clear ion-ios-checkmark-outline" ng-click="save(letter.Id)">&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="button button-icon button-clear ion-ios-settings-strong" ng-click="showE($event)">
+        </button>
+      </ion-nav-buttons>
+  <ion-content>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Letra</span>
+          <input style="font-size: 18px !important; text-align: right !important; font-weight: bold !important; color: #ef473a !important; " type="text" name="letter" value="{{letter.title}}" readonly="readonly">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Palabra</span>
+          <input style="font-size: 18px !important; text-align: right !important; font-weight: bold !important;" type="text" ng-model="addWord.content" placeholder="pa-la-bra">
+        </label>
+        <div class="row">
+            
+            <div class="col col-40">
+                <label>
+                    <span class="input-label">&nbsp;Audio</span>
+                </label>
+            </div>
+            <div class="col col-offset-20">
+                
+                <a ng-click="playing(editWordRow.custom_sound_path,'/android_asset/www/raw/'+mintitle+'.mp3')"><img ng-src="img/sonidos/play.png" width="40px" height="40px"></a>
+                    <!--<a ng-click="play(editsimple.custom_sound_path)"><img ng-src="img/sonidos/play.png" width="40px" height="40px"></a>-->
+            
+            </div>
+            <div class="col">
+                <a on-hold="recordStart()" on-release="recordEnd()"><img ng-src="img/sonidos/mic.png" width="40px" height="40px"></a>   
+            </div>
+            <div class="col">
+                <a ng-ref="#"><img ng-src="img/sonidos/gallery.png" width="40px" height="40px"></a>
+            </div>
+        </div>
+          
+          
+      </div>
+      
+      <div class="row responsive-sm responsive-lg responsive-md">
+           
+            <div class="col">
+                <div class="card">
+                    
+                    <div ng-if="imgURI!==null" style="height: 180px !important;" class="item item-image">            
+                        <a style="height: 180px !important;"><img ng-src="{{imgURI}}"></a>
+                    </div>
+                    
+                    <div ng-if="imgURI===null && editWordRow.custom_image_path===null" style="height: 180px !important;" class="item item-image">            
+                        <a style="height: 180px !important;"><img ng-src="img/palabras/not_found.png"></a>
+                    </div>
+                    <div ng-if="imgURI===null && editWordRow.custom_image_path!==null" style="height: 180px !important;" class="item item-image">            
+                        <a style="height: 180px !important;"><img ng-src="{{editWordRow.custom_image_path}}"></a>
+                    </div>
+                    
+                    
+                     <div style="text-align: center !important; font-size: 40px !important;" class="item text-center">
+                        <!-- PARA IOS<a ng-click="play('raw/'+numbers[$index].title+'.mp3')"><h3>{{numbers[$index].content}}</h3></a>-->
+                        <a ng-click="editImage()" style="font-size: 30px !important;"><i class="icon ion-ios-compose-outline"></i></a>
+                    </div>
+                   
+                </div>   
+            </div>
+            
+      </div>
+  </ion-content>
+</ion-view>

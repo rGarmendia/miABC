@@ -1,0 +1,66 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable bar-assertive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        
+        <div style="margin: 0 auto; width:30px" ><img src="img/iconos/logo.png" width="30px" height="30px"></div>
+        <div ng-controller="ProfileCtrl">
+            <h4 style="color:#fff !important; margin: 5px !important;" >{{profilename}}</h4>
+            <!--<input style="color:#fff !important; font-size: 24px !important; text-align: center !important; font-weight: bold !important;" type="text" ng-model="profilename" readonly="readonly">-->
+        </div>
+      </ion-nav-buttons>
+        
+      <ion-nav-buttons side="right">
+        <div ng-controller="ProfileCtrl">
+            <div style="margin: 0 auto; width:30px;"><img ng-src="{{profileimage}}" width="35px" height="35px" style="border-radius: 50%;">&nbsp;&nbsp;</div>
+         </div>
+        <button class="button button-icon button-clear ion-android-share-alt"></button>&nbsp;&nbsp;
+        <button class="button button-icon button-clear ion-ios-settings-strong" ng-click="show($event)">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+  <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable bar-assertive">
+      <h1 class="title">Men&uacute</h1>
+    </ion-header-bar>
+    <ion-content class="fondo-rojo">
+      <ion-list class="fondo-rojo">
+        <ion-item class="fondo-rojo item item-icon-left " menu-close href="#/app/inicio">
+            <i class="icon ion-ios-home"></i>
+                Inicio
+        </ion-item>
+        <ion-item class="fondo-rojo item item-icon-left" menu-close href="#/app/letras">
+            <i class="icon ion-chatbox-working"></i>
+                Letras
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="#/app/vocales">
+            <i class="icon ion-chatbox-working"></i>
+                Vocales
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="#/app/palabras">
+            <i class="icon ion-chatbox-working"></i>
+                Palabras
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="#/app/sonidos">
+            <i class="icon ion-android-microphone"></i>
+                Sonidos
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="#/app/numeros">
+            <i class="icon ion-ios-calculator"></i>
+                N&uacutemeros
+        </ion-item>
+        <ion-item class="item item-icon-left" menu-close href="#/app/completar">
+            <i class="icon ion-chatbox"></i>
+                Completar
+        </ion-item>    
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

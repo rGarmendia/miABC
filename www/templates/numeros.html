@@ -1,0 +1,36 @@
+<ion-view view-title="N&uacutemeros" class="bar-assertive">
+    <ion-content>     
+            
+        <div class="row" ng-repeat="number in numbers" ng-if="$index % 2 === 0">
+            <div class="col col-50" ng-if="$index < numbers.length">
+                <div class="card" >
+                    <div ng-controller="mediaCtrl" class="item item-image">
+                        
+                        <!--<a ng-click="play('raw/'+numbers[$index].title+'.mp3')"><img ng-src="img/numeros/{{numbers[$index].content}}.png"></a>-->
+                        <a ng-click="play('/android_asset/www/raw/'+numbers[$index].title+'.mp3')"><img ng-src="img/numeros/{{numbers[$index].content}}.png"></a>
+                    </div>
+                    <div  ng-controller="mediaCtrl" class="item text-center">
+                        <!-- PARA IOS<a ng-click="play('raw/'+numbers[$index].title+'.mp3')"><h3>{{numbers[$index].content}}</h3></a>-->
+                        <a ng-click="play('/android_asset/www/raw/'+numbers[$index].title+'.mp3')"><h3>{{numbers[$index].content}}</h3></a>
+                    </div>
+                </div>  
+            </div>
+            <div class="col col-50" ng-if="$index + 1 < numbers.length">
+                <div class="card">
+                    <div ng-controller="mediaCtrl"  class="item item-image">
+                       
+                         <!--<a ng-click="play('raw/'+numbers[$index + 1].title+'.mp3')"><img ng-src="img/numeros/{{numbers[$index + 1].content}}.png"></a>-->
+                         <a ng-click="play('/android_asset/www/raw/'+numbers[$index + 1].title+'.mp3')"><img ng-src="img/numeros/{{numbers[$index + 1].content}}.png"></a>
+                         
+                    </div>
+                    <div ng-controller="mediaCtrl" class="item text-center">
+                        <!--<a ng-click="play('raw/'+numbers[$index + 1].title+'.mp3')"><h3>{{numbers[$index + 1].content}}</h3></a>-->
+                        <a ng-click="play('/android_asset/www/raw/'+numbers[$index + 1].title+'.mp3')"><h3>{{numbers[$index + 1].content}}</h3></a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        </ion-content>
+</ion-view>
+        
+    

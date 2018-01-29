@@ -1,0 +1,73 @@
+<ion-view view-title="Personal&iacutezame ABC" class="bar-assertive">
+    <ion-nav-buttons side="left">
+       
+        <div style="margin: 0 auto; width:30px" ><img src="img/iconos/logo.png" width="30px" height="30px"></div>
+             
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        
+        
+        <button class="button button-icon button-clear ion-ios-checkmark-outline" ng-click="save()">&nbsp;</button>
+    </ion-nav-buttons>
+    <ion-content>
+        
+        
+        <div class="text-center"><h4 style="color: #000 !important;">Foto de perfil</h4></div>
+        
+        <a ng-click="editImage()">
+        <div ng-if="imgURI!==null" class="text-center"><img ng-src="{{imgURI}}" width="250px" style="border-radius: 50%;"> </div>
+        <div ng-if="imgURI===null && editWordRow.profile_image_path===null" class="text-center"><img ng-src="img/palabras/not_found.png" width="250px" style="border-radius: 50%;"> </div>
+        <div ng-if="imgURI===null && editWordRow.profile_image_path!==null" class="text-center"><img ng-src="{{editWordRow.profile_image_path}}" style="border-radius: 50%;"> </div>
+        </a>
+        
+        
+        <div class="text-center"><input style="font-size: 18px !important; text-align: right !important; font-weight: bold !important;" type="text" ng-model="editWordRow.title">
+            <hr style="border-color: #11c1f3 !important; margin-right: 20px !important;margin-left: 20px !important;">
+        </div>
+        
+        <div class="row">
+            
+            <div class="col col-50">
+                <label>
+                    <span class="input-label">&nbsp;Frase de felicitaci&oacuten</span>
+                </label>
+            </div>
+            <div class="col col-offset-30">
+                
+                <a ng-click="playing(editWordRow.congrats_path,'/android_asset/www/raw/'+mintitle+'.mp3')"><img ng-src="img/sonidos/play.png" width="40px" height="40px"></a>
+                    <!--<a ng-click="play(editsimple.custom_sound_path)"><img ng-src="img/sonidos/play.png" width="40px" height="40px"></a>-->
+            
+            </div>
+            <div class="col">
+                <a on-hold="recordStartCon()" on-release="recordEndCon()"><img ng-src="img/sonidos/mic.png" width="40px" height="40px"></a>   
+            </div>
+            <div class="col">
+                <a ng-href="#"><img ng-src="img/sonidos/gallery.png" width="40px" height="40px"></a>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col col-50">
+                <label>
+                    <span class="input-label">&nbsp;Pronunciaci&oacuten de tu nombre</span>
+                </label>
+            </div>
+            <div class="col col-offset-30">
+                
+                <a ng-click="playing(editWordRow.name_sound_path,'/android_asset/www/raw/'+mintitle+'.mp3',editWordRow.name_sound_path)"><img ng-src="img/sonidos/play.png" width="40px" height="40px"></a>
+                    <!--<a ng-click="play(editsimple.custom_sound_path)"><img ng-src="img/sonidos/play.png" width="40px" height="40px"></a>-->
+            
+            </div>
+            <div class="col">
+                <a on-hold="recordStart()" on-release="recordEnd()"><img ng-src="img/sonidos/mic.png" width="40px" height="40px"></a>   
+            </div>
+            <div class="col">
+                <a ng-href="#"><img ng-src="img/sonidos/gallery.png" width="40px" height="40px"></a>
+            </div>
+        </div>
+        
+        <div class="text-center"><a style="text-decoration: none !important;" ng-href="#/app/inicio"><h4 style="color: #ef473a !important;">Continuar sin personalizar</h4></a></div>
+        
+    </ion-content>
+
+</ion-view>
